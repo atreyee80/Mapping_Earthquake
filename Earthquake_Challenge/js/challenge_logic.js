@@ -203,29 +203,10 @@ d3.json("https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/
     onEachFeature: function (feature, layer) {
       layer.bindPopup("Magnitude: " + feature.properties.mag + "<br>Location: " + feature.properties.place);
     }
-  }).addTo(allEarthquakes);
+  }).addTo(tectonicplates);
 
   // Then we add the earthquake layer to our map.
-  allEarthquakes.addTo(map);
-
- /* // Here we create a legend control object.
-  let legend = L.control({
-    position: "bottomright"
-  });
-
-  // Then add all the details for the legend
-  legend.onAdd = function () {
-    let div = L.DomUtil.create("div", "info legend");
-
-    const magnitudes = [0, 1, 2, 3, 4, 5];
-    const colors = [
-      "#98ee00",
-      "#d4ee00",
-      "#eecc00",
-      "#ee9c00",
-      "#ea822c",
-      "#ea2c2c"
-    ];*/
+  tectonicplates.addTo(map);
 
     // Looping through our intervals to generate a label with a colored square for each interval.
     for (var i = 0; i < magnitudes.length; i++) {
